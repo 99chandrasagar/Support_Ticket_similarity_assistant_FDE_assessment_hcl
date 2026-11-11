@@ -6,6 +6,7 @@
 !/PRESENT_NOW.md
 !/START_PANEL_DEMO.cmd
 !/present_to_panel.py
+!/docs/
 !/support-ticket-assistant/
 
 # Local runtime files and credentials must never enter the repository.
