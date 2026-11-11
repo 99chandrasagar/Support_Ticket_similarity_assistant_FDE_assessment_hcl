@@ -1,0 +1,5 @@
+{
+  "ticket_id": "NT-2",
+  "subject": "Chart shows nothing for the revenue tab",
+  "description": "The revenue tab on the main dashboard is completely empty for this customer, no bars, no error message, just white space."
+}

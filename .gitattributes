@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.cmd text eol=crlf
+
+# Preserve the supplied assessment files byte for byte on every platform.
+support-ticket-assistant/data/tickets.json -text
+support-ticket-assistant/data/new_tickets_example.json -text
+support-ticket-assistant/provided/ticket_utils.py -text
+support-ticket-assistant/provided/README.md -text

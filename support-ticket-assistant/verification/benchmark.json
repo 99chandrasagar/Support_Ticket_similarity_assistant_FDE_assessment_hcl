@@ -1,0 +1,55 @@
+{
+  "provenance": "Identical-template synthetic stress check. The assessment's eligible synthetic seed tickets are repeated with unique IDs. This is not a production benchmark or an estimate of performance on a real corpus.",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows",
+    "architecture": "AMD64"
+  },
+  "scope": {
+    "records": 55000,
+    "available_ticket_templates": 40,
+    "distinct_ticket_templates_used": 40,
+    "query_template_ids": [
+      "NT-1",
+      "NT-2",
+      "NT-3"
+    ],
+    "warmup_queries_excluded": 3,
+    "timed_queries": 60,
+    "result_limit": 3,
+    "default_volume_rationale": "55,000 is a rounded one-year planning assumption at 150 incoming tickets per day; here all replicated records are treated as eligible resolved history."
+  },
+  "timing": {
+    "index_build_ms": 4009.197,
+    "index_build_scope": "SearchEngine construction, including validation and tokenization; excludes disk reads and fixture replication.",
+    "search_scope": "Warm sequential in-process search. Includes ranking and result construction; excludes HTTP, concurrency, process startup and network. p95 uses the nearest-rank method.",
+    "samples": 60,
+    "median_ms": 188.048,
+    "p95_ms": 544.265
+  },
+  "query_timings": {
+    "NT-1": {
+      "samples": 20,
+      "median_ms": 178.725,
+      "p95_ms": 265.122,
+      "returned_results": 0
+    },
+    "NT-2": {
+      "samples": 20,
+      "median_ms": 478.752,
+      "p95_ms": 579.144,
+      "returned_results": 3
+    },
+    "NT-3": {
+      "samples": 20,
+      "median_ms": 171.543,
+      "p95_ms": 198.45,
+      "returned_results": 3
+    }
+  },
+  "limitations": [
+    "Identical text repetition changes term frequencies and posting-list lengths artificially; it does not represent vocabulary diversity or real relevance.",
+    "Only the supplied NT-1, NT-2 and NT-3 queries are exercised; this is a performance stress check, not retrieval-quality evaluation. Some queries can correctly produce no suggestion.",
+    "Single local process, sequential requests, one timing run; no production latency, throughput, availability or memory claim."
+  ]
+}

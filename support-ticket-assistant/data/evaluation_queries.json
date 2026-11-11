@@ -1,0 +1,25 @@
+{
+  "provenance": "The historical tickets and four incoming examples are the assessment provider's synthetic starter data. This additional query set and its relevance judgments were authored locally after reading that history. They are development checks, not independent held-out labels or customer validation. No labels certify that a historical fix is safe for a new ticket.",
+  "tenant_id": "solari-seed",
+  "label_policy": "Positive relevance means the historical symptoms and recorded cause support the same diagnostic path. Negative relevance means the history has no record addressing the stated cause. Shared category or vocabulary alone is not sufficient. Unlabeled candidates count against labeled suggestion precision; failure cases are retained.",
+  "queries": [
+    {"id":"E01","title":"New password is rejected after completing an emailed password reset","description":"The reset link worked but typing the temporary password from the email produces incorrect password on the login page.","relevant_ids":["T-1001"]},
+    {"id":"E02","title":"Okta SSO authentication returns a completely blank app page","description":"The user authenticates at Okta and is redirected back without an error. The SAML email attribute is missing from the mapping.","relevant_ids":["T-1002"]},
+    {"id":"E03","title":"Salesforce opportunities stopped updating in the revenue dashboard","description":"No recent Salesforce data has synced for three days after a source security policy change.","relevant_ids":["T-1101"]},
+    {"id":"E04","title":"Manual re-sync creates duplicate account records","description":"Triggering another sync inserts the same accounts again rather than updating existing rows.","relevant_ids":["T-1103"]},
+    {"id":"E05","title":"Revenue chart is an empty white box with no bars or axis labels","description":"A filter combination returns no rows and the dashboard chart does not show an empty-data message.","relevant_ids":["T-1201"]},
+    {"id":"E06","title":"Two identical monthly charges appear on the same card statement","description":"A previously failed subscription payment was retried even though the original charge succeeded.","relevant_ids":["T-1303"]},
+    {"id":"E07","title":"Invoice bills for more seats than active users","description":"Deactivated accounts still appear in the billing seat count after the admin removed them.","relevant_ids":["T-1301"]},
+    {"id":"E08","title":"Full-year PDF report export fails after thirty seconds","description":"Large date ranges cause the report export request to time out before the PDF is ready.","relevant_ids":["T-1402"]},
+    {"id":"E09","title":"Weekly report emails stopped after the dashboard was renamed","description":"The Monday summary email has not arrived for three weeks. The schedule still references the dashboard's old name.","relevant_ids":["T-1403"]},
+    {"id":"E10","title":"Former employee can still log in after account deactivation","description":"Admin removed access but existing active sessions were not invalidated.","relevant_ids":["T-1502"]},
+    {"id":"E11","title":"Large account dashboard takes more than thirty seconds to become interactive","description":"One widget query scans a table that has grown substantially and is missing an index.","relevant_ids":["T-1601"]},
+    {"id":"E12","title":"Integration gets API 429 rate-limit errors despite unchanged usage","description":"A new background sync job has added redundant polling calls instead of consuming webhook events.","relevant_ids":["T-1702"]},
+    {"id":"N01","title":"Office coffee machine is leaking water","description":"The kitchen floor is wet near the machine.","relevant_ids":[]},
+    {"id":"N02","title":"Laptop fan is loud during video meetings","description":"Please repair the computer hardware.","relevant_ids":[]},
+    {"id":"N03","title":"Need help please","description":"Something is wrong.","relevant_ids":[]},
+    {"id":"N04","title":"Forecast staffing needs for the holiday warehouse shift","description":"We need a recommendation for hiring temporary packers.","relevant_ids":[]},
+    {"id":"N05","title":"SAML login fails because the identity provider clock is ten minutes ahead","description":"SSO assertion time validation fails due to clock skew. The signing certificate, signature, and audience are correct. We need to fix clock synchronization, not certificate renewal.","relevant_ids":[],"label_note":"Retained in-domain hard negative: no supplied history record addresses clock skew. Shared authentication vocabulary does not establish the same cause."},
+    {"id":"N06","title":"Dashboard revenue chart is blank because a browser extension blocks rendering","description":"The chart has valid data and the filter is correct. Disabling the browser extension restores the revenue bars and axis labels; this is not an empty-data problem.","relevant_ids":[],"label_note":"In-domain hard negative: no supplied record addresses extension-blocked rendering. The query explicitly rules out the empty-data cause of T-1201; lexical retrieval may still suggest it."}
+  ]
+}

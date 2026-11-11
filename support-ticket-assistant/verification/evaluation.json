@@ -1,0 +1,366 @@
+{
+  "provenance": "The historical tickets and four incoming examples are the assessment provider's synthetic starter data. This additional query set and its relevance judgments were authored locally after reading that history. They are development checks, not independent held-out labels or customer validation. No labels certify that a historical fix is safe for a new ticket.",
+  "label_policy": "Positive relevance means the historical symptoms and recorded cause support the same diagnostic path. Negative relevance means the history has no record addressing the stated cause. Shared category or vocabulary alone is not sufficient. Unlabeled candidates count against labeled suggestion precision; failure cases are retained.",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows"
+  },
+  "scope": {
+    "tenant_id": "solari-seed",
+    "history_records": 40,
+    "eligible_records": 40,
+    "positive_queries": 12,
+    "negative_queries": 6
+  },
+  "metrics": {
+    "hit_at_3": 1,
+    "mrr_at_3": 1,
+    "false_suggestion_rate": 0.16666666666666666,
+    "positive_hits": 12,
+    "negative_false_suggestions": 1,
+    "labeled_suggestion_precision_on_positives": 1,
+    "labeled_relevant_returned_on_positives": 12,
+    "total_returned_on_positives": 12
+  },
+  "metric_notes": {
+    "hit_at_3": "Fraction of positive queries with at least one labeled relevant ticket in the first three results. It does not penalize additional irrelevant results.",
+    "mrr_at_3": "Mean reciprocal rank of the first labeled relevant result, with zero for a miss.",
+    "labeled_suggestion_precision_on_positives": "Total labeled relevant returned divided by total returned across positive queries. Unlabeled candidates count as irrelevant; labels are synthetic and not independently adjudicated.",
+    "false_suggestion_rate": "Fraction of authored negative queries with any returned suggestion, including in-domain clock-skew and browser-extension cases. Failure cases are retained, not tuned away."
+  },
+  "timing": {
+    "scope": "Warm in-process retrieval only; excludes file loading, process startup, HTTP and network; tiny synthetic corpus is not a scale benchmark.",
+    "samples": 360,
+    "index_build_ms": 4.396,
+    "median_ms": 0.165,
+    "p95_ms": 0.267
+  },
+  "cases": [
+    {
+      "id": "E01",
+      "kind": "positive",
+      "relevant_ids": [
+        "T-1001"
+      ],
+      "returned_ids": [
+        "T-1001"
+      ],
+      "first_relevant_rank": 1,
+      "reason": "matches",
+      "passed": true,
+      "label_note": "One labeled historical root cause; other returned tickets count as unlabeled for precision."
+    },
+    {
+      "id": "E02",
+      "kind": "positive",
+      "relevant_ids": [
+        "T-1002"
+      ],
+      "returned_ids": [
+        "T-1002"
+      ],
+      "first_relevant_rank": 1,
+      "reason": "matches",
+      "passed": true,
+      "label_note": "One labeled historical root cause; other returned tickets count as unlabeled for precision."
+    },
+    {
+      "id": "E03",
+      "kind": "positive",
+      "relevant_ids": [
+        "T-1101"
+      ],
+      "returned_ids": [
+        "T-1101"
+      ],
+      "first_relevant_rank": 1,
+      "reason": "matches",
+      "passed": true,
+      "label_note": "One labeled historical root cause; other returned tickets count as unlabeled for precision."
+    },
+    {
+      "id": "E04",
+      "kind": "positive",
+      "relevant_ids": [
+        "T-1103"
+      ],
+      "returned_ids": [
+        "T-1103"
+      ],
+      "first_relevant_rank": 1,
+      "reason": "matches",
+      "passed": true,
+      "label_note": "One labeled historical root cause; other returned tickets count as unlabeled for precision."
+    },
+    {
+      "id": "E05",
+      "kind": "positive",
+      "relevant_ids": [
+        "T-1201"
+      ],
+      "returned_ids": [
+        "T-1201"
+      ],
+      "first_relevant_rank": 1,
+      "reason": "matches",
+      "passed": true,
+      "label_note": "One labeled historical root cause; other returned tickets count as unlabeled for precision."
+    },
+    {
+      "id": "E06",
+      "kind": "positive",
+      "relevant_ids": [
+        "T-1303"
+      ],
+      "returned_ids": [
+        "T-1303"
+      ],
+      "first_relevant_rank": 1,
+      "reason": "matches",
+      "passed": true,
+      "label_note": "One labeled historical root cause; other returned tickets count as unlabeled for precision."
+    },
+    {
+      "id": "E07",
+      "kind": "positive",
+      "relevant_ids": [
+        "T-1301"
+      ],
+      "returned_ids": [
+        "T-1301"
+      ],
+      "first_relevant_rank": 1,
+      "reason": "matches",
+      "passed": true,
+      "label_note": "One labeled historical root cause; other returned tickets count as unlabeled for precision."
+    },
+    {
+      "id": "E08",
+      "kind": "positive",
+      "relevant_ids": [
+        "T-1402"
+      ],
+      "returned_ids": [
+        "T-1402"
+      ],
+      "first_relevant_rank": 1,
+      "reason": "matches",
+      "passed": true,
+      "label_note": "One labeled historical root cause; other returned tickets count as unlabeled for precision."
+    },
+    {
+      "id": "E09",
+      "kind": "positive",
+      "relevant_ids": [
+        "T-1403"
+      ],
+      "returned_ids": [
+        "T-1403"
+      ],
+      "first_relevant_rank": 1,
+      "reason": "matches",
+      "passed": true,
+      "label_note": "One labeled historical root cause; other returned tickets count as unlabeled for precision."
+    },
+    {
+      "id": "E10",
+      "kind": "positive",
+      "relevant_ids": [
+        "T-1502"
+      ],
+      "returned_ids": [
+        "T-1502"
+      ],
+      "first_relevant_rank": 1,
+      "reason": "matches",
+      "passed": true,
+      "label_note": "One labeled historical root cause; other returned tickets count as unlabeled for precision."
+    },
+    {
+      "id": "E11",
+      "kind": "positive",
+      "relevant_ids": [
+        "T-1601"
+      ],
+      "returned_ids": [
+        "T-1601"
+      ],
+      "first_relevant_rank": 1,
+      "reason": "matches",
+      "passed": true,
+      "label_note": "One labeled historical root cause; other returned tickets count as unlabeled for precision."
+    },
+    {
+      "id": "E12",
+      "kind": "positive",
+      "relevant_ids": [
+        "T-1702"
+      ],
+      "returned_ids": [
+        "T-1702"
+      ],
+      "first_relevant_rank": 1,
+      "reason": "matches",
+      "passed": true,
+      "label_note": "One labeled historical root cause; other returned tickets count as unlabeled for precision."
+    },
+    {
+      "id": "N01",
+      "kind": "negative",
+      "relevant_ids": [],
+      "returned_ids": [],
+      "first_relevant_rank": null,
+      "reason": "no_match",
+      "passed": true,
+      "label_note": "No relevant history record is labeled for this query."
+    },
+    {
+      "id": "N02",
+      "kind": "negative",
+      "relevant_ids": [],
+      "returned_ids": [],
+      "first_relevant_rank": null,
+      "reason": "no_match",
+      "passed": true,
+      "label_note": "No relevant history record is labeled for this query."
+    },
+    {
+      "id": "N03",
+      "kind": "negative",
+      "relevant_ids": [],
+      "returned_ids": [],
+      "first_relevant_rank": null,
+      "reason": "no_match",
+      "passed": true,
+      "label_note": "No relevant history record is labeled for this query."
+    },
+    {
+      "id": "N04",
+      "kind": "negative",
+      "relevant_ids": [],
+      "returned_ids": [],
+      "first_relevant_rank": null,
+      "reason": "no_match",
+      "passed": true,
+      "label_note": "No relevant history record is labeled for this query."
+    },
+    {
+      "id": "N05",
+      "kind": "negative",
+      "relevant_ids": [],
+      "returned_ids": [],
+      "first_relevant_rank": null,
+      "reason": "no_match",
+      "passed": true,
+      "label_note": "Retained in-domain hard negative: no supplied history record addresses clock skew. Shared authentication vocabulary does not establish the same cause."
+    },
+    {
+      "id": "N06",
+      "kind": "negative",
+      "relevant_ids": [],
+      "returned_ids": [
+        "T-1201"
+      ],
+      "first_relevant_rank": null,
+      "reason": "matches",
+      "passed": false,
+      "label_note": "In-domain hard negative: no supplied record addresses extension-blocked rendering. The query explicitly rules out the empty-data cause of T-1201; lexical retrieval may still suggest it."
+    }
+  ],
+  "provided_examples": {
+    "provenance": "All four incoming inputs are read verbatim from the provider's new_tickets_example.json. Expected behavior and relevance judgments are locally authored; the provider did not supply a gold answer key.",
+    "policy": "Known-source examples require a labeled historical comparison in the top three. No-exact-source examples require abstention under this deliberately strict relevance policy; related vocabulary alone is insufficient. These results are separate from authored-query metrics.",
+    "metrics": {
+      "known_source_examples": 2,
+      "known_source_hits_at_3": 2,
+      "labeled_known_source_suggestions": 2,
+      "total_known_source_suggestions": 3,
+      "labeled_suggestion_precision_on_known_examples": 0.6666666666666666,
+      "no_exact_source_examples": 2,
+      "no_exact_source_false_suggestions": 0
+    },
+    "cases": [
+      {
+        "id": "NT-1",
+        "input": {
+          "ticket_id": "NT-1",
+          "subject": "Can't log in, password reset email never arrives",
+          "description": "A customer requested a password reset an hour ago and says the email still hasn't shown up, even after checking spam."
+        },
+        "relevant_ids": [],
+        "related_ids": [
+          "T-1001"
+        ],
+        "expected_behavior": "No exact delivery fix is present; abstain under the strict relevance policy. T-1001 can at most be adjacent investigation context.",
+        "assessment_note": "NT-1 says the reset email never arrives. T-1001 assumes the reset email arrived and a password was rejected due to letter case. Its copy-paste advice does not resolve email delivery.",
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "unlabeled_returned_ids": [],
+        "reason": "no_match",
+        "passed": true
+      },
+      {
+        "id": "NT-2",
+        "input": {
+          "ticket_id": "NT-2",
+          "subject": "Chart shows nothing for the revenue tab",
+          "description": "The revenue tab on the main dashboard is completely empty for this customer, no bars, no error message, just white space."
+        },
+        "relevant_ids": [
+          "T-1201"
+        ],
+        "related_ids": [],
+        "expected_behavior": "Surface T-1201 as a useful historical comparison; confirm the current filter and row count before reusing the empty-data explanation.",
+        "assessment_note": "A blank revenue chart with no bars resembles T-1201, but the incoming example does not establish the current root cause.",
+        "returned_ids": [
+          "T-1201",
+          "T-1501"
+        ],
+        "first_relevant_rank": 1,
+        "unlabeled_returned_ids": [
+          "T-1501"
+        ],
+        "reason": "matches",
+        "passed": true
+      },
+      {
+        "id": "NT-3",
+        "input": {
+          "ticket_id": "NT-3",
+          "subject": "Getting charged twice this month",
+          "description": "Customer's card statement shows two charges for what should be a single monthly subscription payment."
+        },
+        "relevant_ids": [
+          "T-1303"
+        ],
+        "related_ids": [],
+        "expected_behavior": "Surface T-1303 as a useful historical comparison; verify the payment records before attributing the duplicate to retries.",
+        "assessment_note": "Two charges in one billing cycle resemble T-1303. The similarity result does not authorize a refund or prove the retry mechanism caused this incident.",
+        "returned_ids": [
+          "T-1303"
+        ],
+        "first_relevant_rank": 1,
+        "unlabeled_returned_ids": [],
+        "reason": "matches",
+        "passed": true
+      },
+      {
+        "id": "NT-4",
+        "input": {
+          "ticket_id": "NT-4",
+          "subject": "Our data warehouse integration with Snowflake is failing",
+          "description": "Customer set up a new integration to sync data into their Snowflake warehouse and it's failing with an unclear connection error. This is a newer integration type we haven't seen many tickets about yet."
+        },
+        "relevant_ids": [],
+        "related_ids": [],
+        "expected_behavior": "Abstain from a strong match because the history contains no Snowflake connection incident; investigate the new connector.",
+        "assessment_note": "Salesforce and HubSpot authentication fixes must not be treated as a Snowflake fix solely because all mention integration or sync.",
+        "returned_ids": [],
+        "first_relevant_rank": null,
+        "unlabeled_returned_ids": [],
+        "reason": "no_match",
+        "passed": true
+      }
+    ]
+  }
+}
